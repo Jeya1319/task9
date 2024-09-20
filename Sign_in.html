@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 75%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background: #45a049;
+        }
+
+        .show-password {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .forgot-password, .signup-link {
+            margin-top: 10px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        @media screen and (max-width: 1700px) {
+            body { 
+                background :url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2JBPVAYNKBbaEOeK234u5RdQZ9vnHBY9uVw&s') no-repeat center center fixed ;
+                background-size:cover ; 
+        }
+        }
+        @media screen and (max-width: 800px) {
+            body {
+                background :url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvgLabEk0D5CVwCzBw4HK7-DFf1sEeIk0nUQ&s') no-repeat center center fixed ;
+                background-size:cover ; 
+                  }
+        }
+    </style>
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const showPasswordCheckbox = document.getElementById('showpassword');
+            
+            passwordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="login" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="show-password">
+                <input type="checkbox" id="showpassword" name="showpassword" onclick="togglePassword()">
+                <label for="showpassword">Show Password</label>
+            </div>
+
+            <input type="submit" value="Sign In">
+            <div class="forgot-password">
+                <a href="forgot-password.html">Forgot Password?</a>
+            </div>
+            <div class="signup-link">
+                Don't have an account? <a href="index.html">Sign Up</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
